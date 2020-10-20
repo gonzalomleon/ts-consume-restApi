@@ -1,0 +1,18 @@
+<table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th *ngFor="let col of columns">
+           <ng-container *ngIf="!col.headerTemplate">{{col.header}}</ng-container> 
+           <ng-template *ngIf="col.headerTemplate" [ngTemplateOutlet]="col.headerTemplate" [ngTemplateOutletContext]="{ $implicit: { header: col.header } }"></ng-template>
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let row of dataset; let i = index">
+      <tr>
+        <td  *ngFor="let col of columns">
+          <ng-container *ngIf="!col.bodyTemplate">{{row[col.value]}}</ng-container> 
+          <ng-template *ngIf="col.bodyTemplate" [ngTemplateOutlet]="col.bodyTemplate" [ngTemplateOutletContext]="{ $implicit: { value: row[col.value] }, row: row }"></ng-template>
+        </td>
+      </tr>
+    </tbody>
+</table> 
