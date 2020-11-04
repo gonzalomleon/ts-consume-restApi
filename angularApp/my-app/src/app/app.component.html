@@ -43,19 +43,19 @@
 
 <div class="content" role="main">
   <div>
+    <input type="button" value="Login" (click)="login()" />
+    {{menuItem?.menuitems || nothingToShow}}
     <div>
-      <span class="menu3">Menu 1</span>
-      <span>Menu 2</span>
-      <span id="menu3">Menu 3</span>
+      
       <div>
-      <label>Usuario</label>
-      <input type="text" name="abc" />
-    </div>
-    <div>
-      <label>Contraseña</label>
-      <input type="password" name="abc" />
-    </div>
-    <input type="button" value="Agregar" (click)="agregar()" />
+        <label>Usuario</label>
+        <input type="text" name="abc" />
+      </div>
+      <div>
+        <label>Contraseña</label>
+        <input type="password" name="abc" />
+      </div>
+      <input type="button" value="Agregar" (click)="agregar()" />
     </div>
 
     <h2>A Table of Data</h2>
